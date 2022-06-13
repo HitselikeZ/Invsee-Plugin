@@ -1,0 +1,27 @@
+package de.hitselikez.main;
+
+import de.hitselikez.cmds.Invsee;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class Main extends JavaPlugin {
+
+    public static String sys = "§6[System] §7";
+    public static String noperm = sys + "Dazu hast du keine Rechte !";
+
+    @Override
+    public void onEnable() {
+
+        Bukkit.getServer().getConsoleSender().sendMessage("§aDas Plugin wurde gestartet !");
+
+        getCommand("invsee").setExecutor(new Invsee());
+
+    }
+
+    @Override
+    public void onDisable() {
+
+        Bukkit.getServer().getConsoleSender().sendMessage("§4Das Plugin wurde gestoppt !");
+
+    }
+}
